@@ -19,9 +19,9 @@ const uploadCtrl = {
             cloudinary.v2.uploader.upload(file.tempFilePath, {folder: "accommodation"}, async(err, result)=>{
                 if(err) throw err;
 
-                //console.log("test-uploade-admin")
-
                 removeTmp(file.tempFilePath)
+
+                console.log("test-uploade-admin")
     
                 res.json({public_id: result.public_id, url: result.secure_url})
             })    
