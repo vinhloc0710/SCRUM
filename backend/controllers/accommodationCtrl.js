@@ -35,6 +35,28 @@ const accommodationCtrl={
         } catch (err) {
             return res.status(500).json({msg: err.message})
         }
+    },
+    deleteAccoms: async(req, res) =>{
+        try {
+            await Accoms.findByIdAndDelete(req.params.id)
+            res.json({msg: "Deleted an accommodation"})
+        } catch (err) {
+            return res.status(500).json({msg: err.message})
+        }
+    },
+    updateAccoms: async(req, res) =>{
+        try {
+            const {owner_name, price, description, address,images} = req.body;
+            if(!images) return res.status(400).json({msg: "No image upload"})
+
+            await Accoms.findOneAndUpdate({_id: req.params.id}, {
+                owner_name, price, description, address,images
+            })
+
+            res.json({msg: "Updated an accommodation"})
+        } catch (err) {
+            return res.status(500).json({msg: err.message})
+        }
     }
 }
 
