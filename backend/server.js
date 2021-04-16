@@ -5,9 +5,15 @@ const cors = require('cors')
 const cookieParser = require('cookie-parser')
 const fileUpload = require('express-fileupload')
 
-
-
 const app = express()
+app.use(cors({
+    origin: '*',
+    methods: ['GET', 'PUT', 'DELETE', 'PATCH', 'POST'],
+    allowedHeaders: 'Content-Type, Authorization, Origin, X-Requested-With, Accept'
+}));
+
+
+
 app.use(express.json())
 app.use(cors())
 app.use(cookieParser())
