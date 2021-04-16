@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+
+.card-text{
+  height:150px;
+}
+
+.navbar-brand
+{
+    font-size: 30px;
+    font-weight: bold;
+
+}
+.navbar-nav
+{
+    margin: 0 auto;
+}
+
+.nav-link
+{
+    font-size: 20px;
+}
+footer{
+height:100px;
+}
+.menu{
+    font-size: 40px;
+    color: orange;
+    font-weight: bold;
+}
+.menu::after
+{
+    content: '';
+    height: 4px;
+    background: #191919;
+    width: 10%;
+    display: block;   
+}
+.navbar-nav{
+    width:500px;
+    display: flex;
+    justify-content: space-evenly!important;
+}
