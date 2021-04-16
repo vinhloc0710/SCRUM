@@ -24,8 +24,8 @@ app.use(fileUpload({
 const accRoute = require('./routes/accommodationRouter')
 const upLoad = require('./routes/uploadRouter')
 
-app.use('/api/acc',accRoute)
-app.use('/api/upload',upLoad)
+app.use('/api',accRoute)
+app.use('/api',upLoad)
 
 const URI = process.env.MONGODB_URL
 mongoose.connect(URI, {
