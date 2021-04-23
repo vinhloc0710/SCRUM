@@ -21,9 +21,11 @@ app.use(fileUpload({
     useTempFiles: true
 }))
 
+const user = require('./routes/userRouter')
 const accRoute = require('./routes/accommodationRouter')
 const upLoad = require('./routes/uploadRouter')
 
+app.use('/user',user)
 app.use('/api',accRoute)
 app.use('/api',upLoad)
 
