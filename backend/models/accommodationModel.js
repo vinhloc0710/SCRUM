@@ -20,6 +20,10 @@ const accomSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    status:{
+        type: String,
+        required: true
+    },
     images:{
         type: Object,
         required: true
